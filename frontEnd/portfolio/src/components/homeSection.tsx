@@ -71,7 +71,7 @@ export default function HomeSection() {
         <SocialMedia borderBottom={false} />
 
         {/* Download CV button */}
-        <a href="#" className={styles.downloadBtn}>
+        <a href="#" download className={styles.downloadBtn}>
           Download CV
           <svg
             xmlns="http://www.w3.org/2000/svg"

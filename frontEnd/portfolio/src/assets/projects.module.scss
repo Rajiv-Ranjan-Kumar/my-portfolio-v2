@@ -9,6 +9,18 @@
     gap: 2rem;
     align-items: center;
 
+    // Responsive adjustments for screen width less than 769px
+    @media screen and (max-width: 769px) {
+        height: max-content;
+    }
+
+    // Responsive adjustments for screen height greater than 801px and width greater than 769px
+    @media screen and (min-height: 801px) and (min-width: 769px) {
+        height: max-content;
+        padding-top: 8rem;
+        padding-bottom: 5rem;
+    }
+
     /* Heading section for projects with title and description */
     .projectsHeading{
         padding: 0 10%;
@@ -22,7 +34,7 @@
             font-size: 1.5rem;
             line-height: 2.5rem;
             text-wrap: nowrap;
-            
+
             > span {
               color: var(--main-color);
             }
