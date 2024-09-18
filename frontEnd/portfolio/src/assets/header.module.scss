@@ -1,0 +1,177 @@
+/* Main header container styles */
+.headerMainContainer {
+    /* Set width, height, and padding for the header */
+    width: 100%;
+    height: 4rem;
+    padding: 1rem 7%;
+    
+    /* Flexbox layout for horizontal alignment between logo and navigation */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Fix the header at the top of the page */
+    flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    /* Background color and shadow for the header */
+    background-color: var(--bg-color);
+    box-shadow: 0 0 10px var(--main-color);
+    
+    /* Ensure the header stays above other elements */
+    z-index: 1;
+
+    /* Logo styles */
+    .logo {
+        font-size: 2rem;
+        color: var(--text-color);
+        font-weight: 700;
+        cursor: default;
+
+        /* Style for the highlighted part of the logo */
+        > span {
+            color: var(--main-color);
+        }
+    }
+
+    /* Navigation styles for desktop view */
+    .nav {
+        width: fit-content;
+        height: fit-content;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4.5rem;
+        position: relative;
+
+        /* Hide navigation links on smaller screens (mobile view) */
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+
+        /* Styles for individual navigation links */
+        > a {
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 700;
+
+            /* Hover and active state styling for navigation links */
+            &:hover, &:active {
+                color: var(--text-color);
+            }
+        }
+    }
+
+    /* Responsive styles for mobile screens */
+    @media screen and (max-width: 768px) {
+        /* Display the navigation as a dropdown menu on mobile */
+        .navDisplay {
+            position: absolute;
+            top: 4.2rem;
+            right: 0;
+            width: max-content;
+            height: fit-content;
+            padding: 2rem 5rem;
+            
+            /* Flexbox layout for vertical alignment of links */
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom-left-radius: .5rem;
+            gap: 2rem;
+            
+            /* Styling for the mobile menu background and shadow */
+            background-color: var(--bg-color);
+            box-shadow: 0 0 10px var(--main-color);
+            
+            /* Initial state: hidden off-screen */
+            transform: translateX(100%);
+            animation: closeNav 0s ease-out forwards; /* Set default to closed */
+        }
+
+        /* When opening the menu, remove 'close' class to apply 'openNav' animation */
+        .navDisplay.open {
+            animation: openNav 0.3s ease-in forwards;
+        }
+
+        /* When closing the menu, add 'close' class to apply 'closeNav' animation */
+        .navDisplay.close {
+            animation: closeNav 0.3s ease-out forwards;
+        }
+
+        /* Animation for opening the navigation menu */
+        @keyframes openNav {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+        /* Animation for closing the navigation menu */
+        @keyframes closeNav {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(110%);
+            }
+        }
+    }
+
+
+
+    /* Menu button (hamburger) for mobile navigation */
+    .menuButton {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        /* Styles for the 3 lines of the hamburger button */
+        .pii {
+            width: 2rem;
+            height: 0.2rem;
+            background-color: var(--text-color);
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+        }
+
+        /* Hide the menu button on larger screens (desktop view) */
+        @media screen and (min-width: 769px) {
+            display: none;
+        }
+    }
+
+    /* Active state for the menu button (when clicked) */
+    .menuButton.active{
+        gap: 0;
+
+        .pii:first-child {
+            transform: rotate(-45deg);
+            transform-origin: 50% 50%;
+        }
+
+        .pii:nth-child(2) {
+            opacity: 0;
+        }
+
+        .pii:nth-child(3) {
+            transform: rotate(45deg);
+            transform-origin: 70% 30%;
+        }
+    }
+
+}

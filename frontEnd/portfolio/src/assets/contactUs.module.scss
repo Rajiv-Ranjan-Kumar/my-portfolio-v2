@@ -1,0 +1,120 @@
+/* Main section for the contact form */
+.contactUsSection{
+    width: 100%;
+    height: max-content;
+    padding: 0rem 7%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    background-color: var(--primary-color);
+
+    /* Heading section for the contact form */
+    .contactUsHeading{
+        padding: 0 10%;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        /* Main heading of the contact section */
+        >h2{
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            > span {
+              color: var(--main-color);
+            }
+        }
+
+        /* Subheading or description text under the main heading */
+        >p{
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+
+    /* Container holding the form */
+    .formsContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+
+        /* Main contact form */
+        >form{
+            width: 35rem;
+            border: 1px solid var(--main-color);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 4rem;
+            align-items: center;
+            border-radius: 2rem;
+            box-shadow: 0 0 10px var(--main-color);
+
+            /* Adjust form width and padding for screens smaller than 769px */
+            @media screen and (max-width:769px) {
+                width: 25rem;
+                padding: 2rem 3rem;
+            }
+
+            /* Further adjust padding for very small screens (less than 300px) */
+            @media screen and (max-width:300px) {
+                padding: 2rem 2rem;
+            }
+
+            /* Group for each label and input/textarea element */
+            .formGroup{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                /* Label for input fields */
+                >label{
+                    font-size: 1rem;
+                }
+
+                /* Input fields for user data */
+                >input{
+                    padding: .8rem 1rem .825rem 1rem;
+                    border: 1px solid var(--main-color);
+                    border-radius: .5rem;
+                    background-color: var(--primary-color);
+                    color: var(--text-color);
+                    font-size: 1.1rem;
+                }
+
+                /* Textarea for message input */
+                >textarea{
+                    height: 10rem;
+                    font-size: 1.1rem;
+                    border-radius: .5rem;
+                    border: 1px solid var(--main-color);
+                    background-color: var(--primary-color);
+                    color: var(--text-color);
+                    padding: 1rem;
+                }
+            }
+
+            /* Send button for the form */
+            >button{
+                padding: .8rem 2.5rem;
+                border: 1px solid var(--text-color);
+                border-radius: 1rem;
+                background-color: var(--main-color);
+                color: var( --snd-bg-color);
+                font-weight: 600;
+                cursor: pointer;
+
+                &:hover{box-shadow: 0 0 10px var(--text-color);}
+            }
+        }
+    }
+}

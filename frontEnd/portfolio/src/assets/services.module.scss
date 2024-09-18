@@ -1,0 +1,185 @@
+/* Main container for the services section */
+.servicesSection{
+    width: 100%;
+    height: max-content;
+    padding: 0rem 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+
+    /* Container for the section heading */
+    .servicesHeading{
+        padding: 0 10%;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        /* Styles for the main heading */
+        >h2{
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            > span {
+              color: var(--main-color);
+            }
+        }
+
+        /* Styles for the paragraph under the heading */
+        >p{
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+
+    /* Container for the services content */
+    .servicesContentSection{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        width: 100%; 
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        align-items: center;
+        justify-content: space-between;
+
+        /* Responsive behavior for smaller screens */
+        @media screen and (max-width: 769px) {
+            flex-direction: column;
+        }
+
+        /* Container for each service card */
+        .servicesBackground{
+            width: fit-content;
+            height: fit-content;
+
+            /* Individual service card */
+            .services{
+                max-width: 22rem;
+                padding: 2rem;
+                border-radius: 1.5rem;
+                box-shadow: 0 0 10px var(--main-color);
+                background-color: var(--primary-color);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+    
+                /* Hover effect for the service card */
+                &:hover{border: 1px solid var(--main-color);}
+    
+                /* Styles for the service icon */
+                .icon{
+                    width: fit-content;
+                    height: fit-content;
+                }
+    
+                /* Styles for the service title */
+                >h3{
+                    font-size: 1.3rem;
+                }
+    
+                /* Container for service description */
+                .text{
+                    overflow: hidden;
+                    height: 17.5rem;
+                    width: 100%;
+            
+                    /* Styles for the paragraph inside the service card */
+                    >p{
+                        margin-top: 1rem;
+                        font-size: 1.1rem;
+                        line-height: 1.5;
+                        text-align: justify;
+                    }
+                }
+    
+                /* Button inside each service card */
+                >button{
+                    margin-top: 1rem;
+                    padding: .5rem 1rem;
+                    border-radius: .5rem;
+                    font-weight: 600;
+                    color: var(--snd-bg-color);
+                    background-color: var(--main-color);
+                    cursor: pointer;
+    
+                    &:hover{box-shadow: 0 0 10px var(--text-color);}
+                }
+            }    
+        }
+
+        /* Overlay background for detailed service view */
+        .servicesBackgroundColor{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, .8);
+            position: fixed;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            /* Container for the detailed service card within the overlay */
+            .services{
+                max-width: 90%;
+                min-height: 80%;
+                max-height: 20rem;
+                background-color: var(--snd-bg-color);
+                justify-content: flex-start;
+                position: relative;
+
+                .icon{margin-top: 2rem;}
+
+                /* Close button inside the service detail overlay */
+                >span{
+                    position: absolute;
+                    top: 1rem;
+                    right: 2rem;
+                    color: var(--main-color);
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+    
+                /* Scrollable text container inside the service detail overlay */
+                .text{
+                    height: 30rem;
+                    overflow-y: scroll;
+
+                    /* Hides the scrollbar */
+                    &::-webkit-scrollbar{display: none;}
+
+                    /* Responsive behavior for smaller screens */
+                    @media screen and (max-width:769px) {
+                        height: 100%;
+                    }
+                }
+
+                .button{
+                    margin-top: 0;
+                    width: fit-content;
+                    position: absolute;
+                    bottom: 1rem;
+                    left: 50%;
+                    right: 50%;
+                    transform: translate(-50%,-50%);
+
+                    @media screen and (max-width: 769px){
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

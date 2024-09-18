@@ -1,0 +1,17 @@
+/* Main footer section */
+.footerSecion{
+    width: 100%;
+    height: max-content;
+    padding: 2rem 7%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    
+    /* Style for the footer text, setting font size and color */
+    >p{
+        font-size: .8rem;
+        color: var(--main-color);
+    }
+}

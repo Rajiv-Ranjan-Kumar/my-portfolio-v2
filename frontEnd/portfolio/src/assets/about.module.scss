@@ -1,0 +1,146 @@
+// About Section styling
+.aboutSection {
+  width: 100%;
+  height: 100vh;
+  padding: 0rem 7%;
+  flex-shrink: 0;
+  background-color: var(--primary-color);
+
+  // Responsive adjustments for screen width less than 769px
+  @media screen and (max-width: 769px) {
+    height: max-content;
+  }
+
+  // Responsive adjustments for screen height greater than 801px and width greater than 769px
+  @media screen and (min-height: 801px) and (min-width: 769px) {
+    height: max-content;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+
+  // Content section within the about section
+  .aboutContentSection {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Two equal-width columns
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    // Responsive adjustments for screen width less than 769px
+    @media screen and (max-width: 769px) {
+      grid-template-columns: 1fr; // Single column layout
+      padding-top: 6rem; 
+      padding-bottom: 4rem;
+    }
+
+    // Image section within the about content
+    .aboutImageSection {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-shrink: 0;
+
+      // Styling for individual images
+      .aboutImage {
+        width: 18rem;
+        height: 25rem;
+        border: 2px solid var(--text-color);
+        border-radius: 3rem;
+        box-shadow: 0 0 1.5rem var(--text-color);
+        background-color: var(--main-color);
+
+        // Hover effect for images
+        &:hover {
+          box-shadow: 0 0 2.5rem var(--text-color);
+        }
+
+        // Image inside the aboutImage container
+        > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 3rem;
+        }
+      }
+    }
+
+    // Text section within the about content
+    .aboutText {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+
+      // Styling for secondary headings
+      > h2 {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        > span {
+          color: var(--main-color);
+        }
+      }
+
+      // Container for text content
+      .textContainer {
+        height: 15.5rem;
+        overflow: hidden;
+
+        // Styling for tertiary headings
+        > h3 {
+          font-size: 1.2rem;
+          color: var(--text-color);
+        }
+
+        // Styling for paragraph text
+        > p {
+          margin-top: 1rem; 
+          font-size: 1.1rem;
+          line-height: 1.5;
+          text-align: justify;
+        }
+      }
+
+      .textContainerFull {
+        height: 20rem;
+        padding-right: 1rem;
+        overflow: scroll;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar{
+          scrollbar-width: thin;
+        }
+      }
+
+      // Styling for the button
+      > button {
+        width: fit-content;
+        margin-top: 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: .8rem 1.5rem;
+        color: var(--snd-bg-color);
+        border-radius: 2rem;
+        text-wrap: nowrap;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        background-color: var(--main-color);
+        gap: .3rem;
+        cursor: pointer;
+
+        .svg1{
+          padding-top: .2rem;
+        }
+
+        // Hover effect for the link/button
+        &:hover {
+          box-shadow: 0 0 1rem var(--main-color); 
+        }
+      }
+    }
+  }
+}

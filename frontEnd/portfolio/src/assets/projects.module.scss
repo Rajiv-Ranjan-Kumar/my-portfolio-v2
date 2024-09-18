@@ -1,0 +1,199 @@
+/* Main container for the projects section */
+.projectsSection{
+    width: 100%;
+    height: max-content;
+    padding: 0rem 7%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    /* Heading section for projects with title and description */
+    .projectsHeading{
+        padding: 0 10%;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        >h2{
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            > span {
+              color: var(--main-color);
+            }
+        }
+
+        >p{
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+
+    /* Flex container for displaying individual project cards in a row, with wrapping */
+    .projectsContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+        justify-content: center;
+
+        /* Style for each project card with padding, border, and hover effect */
+        .project{
+            width: 21rem;
+            height: 21rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1.5rem;
+            border: 1px solid var(--main-color);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+
+            /* Adjust project card size for medium screens */
+            @media screen and (max-width:769px){
+                width: 30rem;
+                height: 30rem;
+            }
+
+            &:hover{box-shadow: 0 0 10px var(--text-color);}
+
+            /* Image at the top of each project card */
+            >img{
+                width: 100%;
+                border-top-left-radius: 1.5rem;
+                border-top-right-radius: 1.5rem;
+                flex: 1;
+            }
+
+            /* Container for the project title and subtitle */
+            .text{
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+
+                >span{
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: var(--main-color);
+                }
+    
+                >h5{
+                    font-size: 1.1rem;
+                }
+            }
+
+            /* Hidden details that slide up on hover, displaying project information */
+            .projectDetails{
+                width: 100%;
+                height: 100%;
+                padding: 1.5rem;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                border-radius: 1.5rem;
+                background-color: rgba(30, 51, 80, 0.8);
+                animation: slideUp 0.5s ease-out forwards;
+
+                >h6{
+                    width: 100%;
+                    font-size: .9rem;
+                    font-weight: 600;
+                    text-align: start;
+                    color: var(--main-color);
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    text-wrap: nowrap;
+                    margin-top: .5rem;
+
+                    &:first-child{margin-top: 0;}
+
+                    >span{
+                        width: .5rem;
+                        height: .5rem;
+                        border-radius: .5rem;
+                        background-color: var(--main-color);
+                    }
+                }
+
+                >p{
+                    width: 100%;
+                    font-size: .9rem;
+                    font-weight: 500;
+                    text-align: start;
+                    color: var(--text-color);
+                    line-height: 1.4;
+                    margin-top: 1;
+                    padding-left: 1.5rem;
+                    text-align: justify;
+                }
+
+                >ul{
+                    width: 100%;
+                    display:flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    gap: 1rem;
+                    padding-left: 1.5rem;
+
+                    >li{
+                        font-size: .7rem;
+                        list-style: none;
+                        color: var(--text-color);
+                        text-wrap: nowrap;
+                        margin-top: .3rem;
+
+                        &:last-child{
+                            >span{display: none;}
+                        }
+                    }
+                }
+
+                /* Container for action buttons (e.g., links to project) at the bottom of the project card */
+                .urlsContainer{
+                    width: fit-content;
+                    position: absolute;
+                    bottom: 1.5rem;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 2.5rem;
+                    
+                    >a{
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 2rem;
+                        background-color: var(--main-color);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: var(--text-color);
+
+                        &:hover{background-color: var(--snd-bg-color);}
+                    }
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    top: 100%; /* Start at the bottom */
+                }
+                to {
+                    top: 0; /* Move to the top */
+                }
+            }
+        }
+    }
+}
