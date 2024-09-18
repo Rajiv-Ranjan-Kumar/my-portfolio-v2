@@ -14,14 +14,27 @@
         height: max-content;
         padding-top: 8rem;
         padding-bottom: 5rem;
-    }
-
-    // For screen width less than 769px (Responsive layout)
-    @media screen and (max-width:769px){
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
         gap: 2rem;
+        padding-top: 8rem;
+        padding-bottom: 5rem;
+    }
+
+    // // For screen width less than 769px (Responsive layout)
+    // @media screen and (max-width:769px){
+    //     display: flex;
+    //     flex-direction: column-reverse;
+    //     justify-content: center;
+    //     gap: 2rem;
+    //     padding-top: 8rem;
+    //     padding-bottom: 5rem;
+    // }
+
+    // Responsive adjustments for screen height greater than 801px and width greater than 769px
+    @media screen and (min-height: 801px) and (min-width: 769px) {
+        height: max-content;
         padding-top: 8rem;
         padding-bottom: 5rem;
     }
