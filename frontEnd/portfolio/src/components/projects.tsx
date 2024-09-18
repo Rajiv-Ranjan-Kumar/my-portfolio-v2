@@ -52,7 +52,7 @@ export default function Projects() {
     ];
 
     return (
-        <section className={styles.projectsSection} id='projects'>
+        <section className={styles.projectsSection} id="projects">
             {/* Section heading with a brief introduction */}
             <div className={styles.projectsHeading}>
                 <h2>MY <span>Projects</span></h2>

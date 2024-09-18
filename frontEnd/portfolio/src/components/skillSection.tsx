@@ -56,7 +56,7 @@ export default function Skill() {
     ];
 
     return (
-        <section className={styles.skillSection} id='skills'>
+        <section className={styles.skillSection} id="skills">
             {/* Section heading with title and description */}
             <div className={styles.skillHeading}>
                 <h2>MY <span>Skills</span></h2>
