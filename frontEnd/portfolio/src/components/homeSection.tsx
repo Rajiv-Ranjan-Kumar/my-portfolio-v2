@@ -1,6 +1,7 @@
 "use client";
 
-import React, { lazy, useEffect, useState } from "react";
+import React, { lazy, useEffect, useState, useContext } from "react";
+import SectionRefsContext from '@/app/SectionRefsContext';
 
 const SocialMedia = lazy(() => import("@/components/socialMedia"));
 
@@ -8,6 +9,9 @@ import img from "../../public/rajiv-removebg-preview.png"; // Importing profile 
 import styles from "../assets/homeSection.module.scss"; // Importing styles
 
 export default function HomeSection() {
+  // Get the ref from context
+  const { homeSection } = useContext(SectionRefsContext);
+
   // State to manage different titles (roles)
   const [destination, setDestination] = useState([
     "Full Stack Developer",
@@ -51,7 +55,7 @@ export default function HomeSection() {
   }, [charIndex, index, destination]); // Dependencies for re-triggering the effect
 
   return (
-    <section className={styles.homeSection} id="home">
+    <section className={styles.homeSection} ref={homeSection}>
       <div className={styles.homeSectionContent}>
         <h3>Hi, Myself</h3>
         <h1>Rajiv Ranjan Kumar</h1>

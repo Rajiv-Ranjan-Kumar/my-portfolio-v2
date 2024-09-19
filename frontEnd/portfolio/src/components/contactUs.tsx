@@ -1,13 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import SectionRefsContext from '@/app/SectionRefsContext';
 import styles from '../assets/contactUs.module.scss';
 
 // ContactUs component for displaying the "Contact Us" section
 export default function ContactUs() {
+    // Get the ref from context
+    const { contactSection } = useContext( SectionRefsContext );
 
     return (
-        <section className={styles.contactUsSection} id='contact'>
+        <section className={styles.contactUsSection} ref={ contactSection }>
             {/* Contact Us section heading with a brief description */}
             <div className={styles.contactUsHeading}>
                 <h2>Contact <span>Us</span></h2>

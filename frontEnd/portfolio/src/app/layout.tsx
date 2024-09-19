@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Suspense, lazy } from "react";
+import { SectionRefsProvider } from "./SectionRefsContext";
 const Header = lazy(()=>import("@/components/header"));
 const Footer = lazy(()=>import("@/components/footer"));
 
@@ -19,9 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <main className="main">
-          <div className="navbar-section"><Suspense><Header/></Suspense></div>
-          <section className="container-section">{children}</section>
-          <div className="footer-section"><Suspense><Footer/></Suspense></div>
+          <SectionRefsProvider>
+            <div className="navbar-section"><Suspense><Header/></Suspense></div>
+            <section className="container-section">{children}</section>
+            <div className="footer-section"><Suspense><Footer/></Suspense></div>
+          </SectionRefsProvider>
         </main>
       </body>
     </html>

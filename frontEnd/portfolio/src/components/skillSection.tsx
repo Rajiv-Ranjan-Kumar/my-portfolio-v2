@@ -1,5 +1,8 @@
 'use client';
 
+import { useContext } from 'react';
+import SectionRefsContext from '@/app/SectionRefsContext';
+
 import htmlLogo from '../../public/html_logo.png';
 import htmxLogo from '../../public/htmx_logo.png';
 import cssLogo from '../../public/css_logo.png';
@@ -23,6 +26,8 @@ import javaLogo from '../../public/java_logo.png';
 import styles from '../assets/skill.module.scss'; // Importing styles for the Skill component.
 
 export default function Skill() {
+    // Get the ref from context
+    const { skillsSection } = useContext( SectionRefsContext );
 
     // Frontend skills with associated logos.
     const frontendSkills = [
@@ -56,7 +61,7 @@ export default function Skill() {
     ];
 
     return (
-        <section className={styles.skillSection} id="skills">
+        <section className={styles.skillSection} ref={ skillsSection }>
             {/* Section heading with title and description */}
             <div className={styles.skillHeading}>
                 <h2>MY <span>Skills</span></h2>

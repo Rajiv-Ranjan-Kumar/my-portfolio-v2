@@ -1,6 +1,7 @@
 "use client"; // Indicates that this is a client-side component
 
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
+import SectionRefsContext from "@/app/SectionRefsContext";
 
 // Importing necessary assets: the 'about' image and the SCSS styles for the component
 import aboutImage from "../../public/rajiv-removebg-preview.png";
@@ -13,6 +14,9 @@ import styles from "../assets/about.module.scss";
  * This section includes a personal image, a brief biography, and a link for additional information.
  */
 export default function About() {
+
+  // Get the ref from context
+  const { aboutSection } = useContext(SectionRefsContext);
 
   const [isFullText, setIsFullText] = useState(false);
 
@@ -30,7 +34,7 @@ export default function About() {
 
   return (
     // Main section with a unique ID and styling from the imported SCSS file
-    <section className={styles.aboutSection} id="about">
+    <section className={styles.aboutSection} ref={ aboutSection }>
       {/* Wrapper for the content within the 'About' section */}
       <div className={styles.aboutContentSection}>
 

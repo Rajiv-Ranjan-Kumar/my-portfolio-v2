@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { useContext } from 'react';
+import SectionRefsContext from '@/app/SectionRefsContext';
 import styles from '../assets/header.module.scss';
 
 export default function Header() {
@@ -8,6 +10,22 @@ export default function Header() {
   // State to toggle the menu button
   const [isMenuButton, setIsMenuButton] = useState(false);
   const [isMenuButtonClicked, setIsMenuButtonClicked] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('home'); // Add state for active link
+
+  const { homeSection, aboutSection, skillsSection, servicesSection, projectsSection, contactSection, } = useContext(SectionRefsContext);
+
+
+  // Smooth scroll handler
+  const scrollHandler = (sectionRef: any, section: string) => {
+    if (sectionRef && sectionRef.current) {
+      sectionRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      setActiveSection(section); // Set the active link based on section
+    }
+  };
+
 
   return (
     <header className={styles.headerMainContainer}>
@@ -16,12 +34,12 @@ export default function Header() {
 
       {/* Navigation links with conditional rendering for menu visibility */}
       <nav className={isMenuButton ? `${styles.nav} ${styles.navDisplay} ${styles.open}` : isMenuButtonClicked? `${ styles.nav } ${styles.navDisplay} ${ styles.close }`: styles.nav} >
-        <a href='#home' onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}>Home</a>
-        <a href='#about' onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>About</a>
-        <a href='#skills' onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}>Skills</a>
-        <a href='#services' onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>Services</a>
-        <a href='#projects' onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>Projects</a>
-        <a href='#contact' onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Contact</a>
+        <span onClick={() => scrollHandler(homeSection, 'home')} className={activeSection == 'home' ? styles.active:''}>Home</span>
+        <span onClick={() => scrollHandler(aboutSection, 'about')} className={activeSection == 'about' ? styles.active:''}>About</span>
+        <span onClick={() => scrollHandler(skillsSection, 'skill')} className={activeSection == 'skill' ? styles.active:''}>Skills</span>
+        <span onClick={() => scrollHandler(servicesSection, 'services')} className={activeSection == 'services' ? styles.active:''}>Services</span>
+        <span onClick={() => scrollHandler(projectsSection, 'projects')} className={activeSection == 'projects' ? styles.active:''}>Projects</span>
+        <span onClick={() => scrollHandler(contactSection, 'contact')} className={activeSection == 'contact' ? styles.active:''}>Contact</span>
       </nav>
 
       {/* Menu button (hamburger icon) for mobile view, with toggle effect */}

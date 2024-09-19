@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import SectionRefsContext from "@/app/SectionRefsContext";
 import styles from "../assets/services.module.scss";
 
 // Services component showcasing different service offerings
 export default function Services() {
+  // Get the ref from context
+  const { servicesSection } = useContext( SectionRefsContext );
 
   // State to handle the extended/collapsed state for each service
   const [isExtended, setIsExtended] = useState([false, false, false]);
@@ -17,7 +20,7 @@ export default function Services() {
   };
 
   return (
-    <section className={styles.servicesSection} id="services">
+    <section className={styles.servicesSection} ref={ servicesSection }>
       {/* Section heading and introductory paragraph */}
       <div className={styles.servicesHeading}>
         <h2>Services</h2>

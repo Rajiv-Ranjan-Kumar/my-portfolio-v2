@@ -1,11 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import SectionRefsContext from '@/app/SectionRefsContext';
 import img from '../../public/Screenshot (48).png';
 import styles from '../assets/projects.module.scss';
 
 // Projects component displaying a list of projects
 export default function Projects() {
+    // Get the ref from context
+    const { projectsSection } = useContext( SectionRefsContext );
 
     // State to track which project is being hovered over
     const [indexNumber, setIndexNumber] = useState<null|Number>(null);
@@ -52,7 +55,7 @@ export default function Projects() {
     ];
 
     return (
-        <section className={styles.projectsSection} id="projects">
+        <section className={styles.projectsSection} ref={ projectsSection }>
             {/* Section heading with a brief introduction */}
             <div className={styles.projectsHeading}>
                 <h2>MY <span>Projects</span></h2>

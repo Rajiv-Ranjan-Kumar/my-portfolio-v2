@@ -29,7 +29,7 @@
         font-size: 2rem;
         color: var(--text-color);
         font-weight: 700;
-        cursor: default;
+        cursor: pointer;
 
         /* Style for the highlighted part of the logo */
         > span {
@@ -54,16 +54,19 @@
         }
 
         /* Styles for individual navigation links */
-        > a {
+        > span {
             color: var(--text-color);
             font-size: 1rem;
             font-weight: 700;
+            cursor: pointer;
 
             /* Hover and active state styling for navigation links */
             &:hover, &:active {
-                color: var(--text-color);
+                color: var(--main-color);
             }
         }
+
+        .active{color: var(--main-color);}
     }
 
     /* Responsive styles for mobile screens */
