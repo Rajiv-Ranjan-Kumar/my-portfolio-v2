@@ -18,13 +18,14 @@ export default function Header() {
   // Smooth scroll handler
   const scrollHandler = (sectionRef: any, section: string) => {
     if (sectionRef && sectionRef.current) {
-      sectionRef.current.scrollIntoView({
+      const offsetTop = sectionRef.current.offsetTop;
+      window.scrollTo({
+        top: offsetTop,
         behavior: 'smooth',
-        block: 'start',
       });
       setActiveSection(section); // Set the active link based on section
     }
-  };
+  };  
 
 
   return (
