@@ -1,6 +1,7 @@
 "use client"; // Indicates that this is a client-side component
 
 import { useRef, useState, useContext } from "react";
+import Image from "next/image";
 import SectionRefsContext from "@/app/SectionRefsContext";
 
 // Importing necessary assets: the 'about' image and the SCSS styles for the component
@@ -42,7 +43,7 @@ export default function About() {
         <div className={styles.aboutImageSection}>
           {/* Div containing the image with its associated styles */}
           <div className={styles.aboutImage}>
-            <img src={aboutImage.src} alt="about image" />
+            <Image src={aboutImage.src} width={100} height={100} className={styles.img} alt="about image" />
           </div>
         </div>
 

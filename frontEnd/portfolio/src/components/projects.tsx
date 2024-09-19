@@ -2,6 +2,7 @@
 
 import { useState, useContext } from 'react';
 import SectionRefsContext from '@/app/SectionRefsContext';
+import Image from 'next/image';
 import img from '../../public/Screenshot (48).png';
 import styles from '../assets/projects.module.scss';
 
@@ -67,7 +68,7 @@ export default function Projects() {
                 {projects.map((project:any, index:number) => (
                     <div key={index} className={styles.project} onMouseEnter={()=>handleMouseEnter(index)} onMouseLeave={()=>handleMouseLive()}>
                         {/* Project image */}
-                        <img src={project.imageUrl} alt="project image" />
+                        <Image src={project.imageUrl} width={100} height={100} className={styles.img} alt="project image" />
                         
                         {/* Project name display */}
                         <div className={styles.text}>

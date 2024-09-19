@@ -1,6 +1,7 @@
 'use client';
 
 import { useContext } from 'react';
+import Image from 'next/image';
 import SectionRefsContext from '@/app/SectionRefsContext';
 
 import htmlLogo from '../../public/html_logo.png';
@@ -78,7 +79,7 @@ export default function Skill() {
                     {frontendSkills.map((skill, index) => (
                         <div className={styles.skill} key={index}>
                             <div className={styles.logoContainer}>
-                                <img src={skill.logo?.src} alt={skill.name} />
+                                <Image src={skill.logo?.src} width={100} height={100} className={styles.img} alt={skill.name} />
                             </div>
                             <p>{skill.name}</p>
                         </div>
@@ -91,7 +92,7 @@ export default function Skill() {
                     {backendSkills.map((skill, index) => (
                         <div className={styles.skill} key={index}>
                             <div className={styles.logoContainer}>
-                                <img src={skill.logo?.src} alt={skill.name} />
+                                <Image src={skill.logo?.src} width={100} height={100} className={styles.img} alt={skill.name} />
                             </div>
                             <p>{skill.name}</p>
                         </div>
@@ -104,7 +105,7 @@ export default function Skill() {
                     {otherSkills.map((skill, index) => (
                         <div className={styles.skill} key={index}>
                             <div className={styles.logoContainer}>
-                                <img src={skill.logo?.src} alt={skill.name} />
+                                <Image src={skill.logo?.src} width={100} height={100} className={styles.img} alt={skill.name} />
                             </div>
                             <p>{skill.name}</p>
                         </div>

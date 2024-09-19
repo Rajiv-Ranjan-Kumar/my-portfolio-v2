@@ -2,6 +2,7 @@
 
 import React, { lazy, useEffect, useState, useContext } from "react";
 import SectionRefsContext from '@/app/SectionRefsContext';
+import Image from "next/image";
 
 const SocialMedia = lazy(() => import("@/components/socialMedia"));
 
@@ -90,7 +91,7 @@ export default function HomeSection() {
       {/* Profile image section */}
       <div className={styles.imageSection}>
         <div className={styles.image}>
-          <img src={img.src} alt="profile pic" />
+          <Image src={img.src} width={100} height={100} className={styles.img} alt="profile pic" />
         </div>
       </div>
     </section>
