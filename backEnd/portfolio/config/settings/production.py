@@ -20,6 +20,18 @@ DEBUG = True
 ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
 
 
+# For static files of admin panel
+INSTALLED_APPS = INSTALLED_APPS + [
+    "whitenoise.runserver_nostatic",
+]
+
+
+# For static files of admin panel
+MIDDLEWARE = MIDDLEWARE + [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+]
+
+
 # Database settings for production (PostgreSQL)
 DATABASES = {
     "default": {
@@ -35,7 +47,12 @@ DATABASES = {
 
 # Static and media files for production
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+# For static files of admin panel
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
