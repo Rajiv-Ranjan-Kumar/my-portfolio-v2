@@ -56,3 +56,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # For static files of admin panel
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+CSRF_TRUSTED_ORIGINS = ['https://my-portfolio-v2-production.up.railway.app']
