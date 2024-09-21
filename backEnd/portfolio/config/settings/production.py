@@ -17,7 +17,7 @@ if not SECRET_KEY:
 DEBUG = False
 
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
 
 
 # Database settings for production (PostgreSQL)
