@@ -14,7 +14,7 @@ if not SECRET_KEY:
     raise ValueError(f"{ RED }The SECRET_KEY setting must not be empty.{ RESET }")
 
 
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
@@ -47,11 +47,11 @@ DATABASES = {
 
 # Static and media files for production
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # For static files of admin panel
