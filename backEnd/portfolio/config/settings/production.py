@@ -7,8 +7,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 # Ensure SECRET_KEY is always set
+RED = '\033[91m'
+RESET = '\033[0m'
+
 if not SECRET_KEY:
-    print(f"{'\\033[91m'}The SECRET_KEY setting must not be empty.{'\\033[0m'}")
+    raise ValueError(f"{ RED }The SECRET_KEY setting must not be empty.{ RESET }")
 
 
 DEBUG = False
