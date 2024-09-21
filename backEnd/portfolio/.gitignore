@@ -1,0 +1,22 @@
+# .env file
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Django
+*.log
+staticfiles/
+media/
+
+# SQLite database
+*.sqlite3
+
+# Virtual environment
+venv/
+myenv/
+
+# Miscellaneous
+.DS_Store
+*.swp
