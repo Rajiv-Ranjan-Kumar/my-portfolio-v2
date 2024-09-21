@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Ensure SECRET_KEY is always set
 if not SECRET_KEY:
-    print(f"{'\033[91m'}The SECRET_KEY setting must not be empty.{'\033[0m'}")
+    print(f"{'\\033[91m'}The SECRET_KEY setting must not be empty.{'\\033[0m'}")
 
 
 DEBUG = False
