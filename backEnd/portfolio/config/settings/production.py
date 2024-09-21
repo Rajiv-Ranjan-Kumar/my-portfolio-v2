@@ -14,7 +14,7 @@ if not SECRET_KEY:
     raise ValueError(f"{ RED }The SECRET_KEY setting must not be empty.{ RESET }")
 
 
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
