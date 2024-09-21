@@ -14,7 +14,7 @@ if not SECRET_KEY:
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['your-production-domain.com']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 
 # Database settings for production (PostgreSQL)
@@ -32,11 +32,7 @@ DATABASES = {
 
 # Static and media files for production
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-
-# Absolute filesystem path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
