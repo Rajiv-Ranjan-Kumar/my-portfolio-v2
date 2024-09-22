@@ -17,8 +17,8 @@ if not SECRET_KEY:
 DEBUG = True
 
 
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
-ALLOWED_HOSTS = ['my-portfolio-v2-pi.vercel.app']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 # For static files of admin panel
 INSTALLED_APPS = INSTALLED_APPS + [
@@ -43,11 +43,6 @@ DATABASES = {
         "PORT": os.getenv('DB_PORT'),
     }
 }
-
-# import dj_database_url
-# DATABASES = {
-#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'),conn_max_age=1800)
-# }
 
 
 # Static and media files for production
