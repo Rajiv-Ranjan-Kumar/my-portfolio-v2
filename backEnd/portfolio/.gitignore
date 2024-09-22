@@ -12,6 +12,10 @@ media/
 # SQLite database
 *.sqlite3
 
+# Static files
+staticfiles/
+static/
+
 # Virtual environment
 venv/
 myenv/
