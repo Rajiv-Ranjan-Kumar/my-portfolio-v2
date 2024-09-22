@@ -25,12 +25,14 @@ ALLOWED_HOSTS = ['my-portfolio-v2-pi.vercel.app']
 # For static files of admin panel
 INSTALLED_APPS = INSTALLED_APPS + [
     "whitenoise.runserver_nostatic",
+    'corsheaders',
 ]
 
 
 # For static files of admin panel
 MIDDLEWARE = MIDDLEWARE + [
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
@@ -55,3 +57,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SUPER_USER_NAME = os.getenv('SUPER_USER_NAME')
 SUPER_USER_EMAIL = os.getenv('SUPER_USER_EMAIL')
 SUPER_USER_PASSWORD = os.getenv('SUPER_USER_PASSWORD')
+
+
+CORS_ORIGIN_ALLOW_ALL = True
