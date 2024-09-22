@@ -62,3 +62,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # For static files of admin panel
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+# Super User releted work
+SUPER_USER_NAME = os.getenv('SUPER_USER_NAME')
+SUPER_USER_EMAIL = os.getenv('SUPER_USER_EMAIL')
+SUPER_USER_PASSWORD = os.getenv('SUPER_USER_PASSWORD')
