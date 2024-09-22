@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
-from ...config.settings.production import SUPER_USER_NAME, SUPER_USER_EMAIL, SUPER_USER_PASSWORD
+from ....config.settings.production import SUPER_USER_NAME, SUPER_USER_EMAIL, SUPER_USER_PASSWORD
 
 class Command(BaseCommand):
     help = 'Create a superuser with predefined credentials'
