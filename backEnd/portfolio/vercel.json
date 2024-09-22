@@ -4,7 +4,7 @@
       {
         "src": "config/wsgi.py",
         "use": "@vercel/python",
-        "config": {"maxLambdaSize": "15mb", "runtime": "Python3.12.3"}
+        "config": { "maxLambdaSize": "15mb", "runtime": "Python3.12.3" }
       }
     ],
     "routes": [
@@ -17,6 +17,6 @@
         "dest": "config/wsgi.py"
       }
     ],
-    "buildCommand": "./build_files.sh"
+    "buildCommand": "pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput --clear"
 }
   
