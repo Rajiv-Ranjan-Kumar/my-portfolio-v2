@@ -17,7 +17,7 @@ if not SECRET_KEY:
 DEBUG = False
 
 
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 
 # For static files of admin panel
@@ -35,7 +35,7 @@ MIDDLEWARE = MIDDLEWARE + [
 # Database settings for production (PostgreSQL)
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE" : 'django.db.backends.postgresql',
         "NAME": os.getenv('DB_NAME'),
         "USER": os.getenv('DB_USER'),
         "PASSWORD": os.getenv('DB_PASSWORD'),
@@ -44,11 +44,16 @@ DATABASES = {
     }
 }
 
+# import dj_database_url
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'),conn_max_age=1800)
+# }
+
 
 # Static and media files for production
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -56,5 +61,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # For static files of admin panel
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-CSRF_TRUSTED_ORIGINS = ['https://my-portfolio-v2-production.up.railway.app']
