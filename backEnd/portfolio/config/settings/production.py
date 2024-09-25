@@ -14,7 +14,7 @@ if not SECRET_KEY:
     raise ValueError(f"{ RED }The SECRET_KEY setting must not be empty.{ RESET }")
 
 
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = [config('ALLOWED_HOSTS'),'*']
@@ -54,3 +54,6 @@ DATABASES = {
 SUPER_USER_NAME = config('SUPER_USER_NAME')
 SUPER_USER_EMAIL = config('SUPER_USER_EMAIL')
 SUPER_USER_PASSWORD = config('SUPER_USER_PASSWORD')
+
+
+CORS_ORIGIN_ALLOW_ALL = True
