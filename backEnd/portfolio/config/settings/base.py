@@ -120,7 +120,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles_build" / "static"
 #     BASE_DIR / "static",
 # ]
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Media files (if any)
