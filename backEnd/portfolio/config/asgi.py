@@ -8,10 +8,17 @@ https://docs.djangoproject.com/en/5.1/howto/deployment/asgi/
 """
 
 import os
+from decouple import config
 
 from django.core.asgi import get_asgi_application
 
+# Set environment to 'development' by default
+environment = 'development'
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.development')
+# Check if the 'IS_PRODUCTION' environment variable is set to 'True'
+if config('IS_PRODUCTION', 'False') == 'True':
+    environment = 'production'
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'config.settings.{environment}')
 
 application = get_asgi_application()
