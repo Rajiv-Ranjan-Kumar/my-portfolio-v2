@@ -26,5 +26,6 @@ urlpatterns = [
 ]
 
 # Static files and media files handling in development
-urlpatterns += static(base.STATIC_URL, document_root=base.STATIC_ROOT)
-urlpatterns += static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)
+if development.DEBUG:
+    urlpatterns += static(base.STATIC_URL, document_root=base.STATIC_ROOT)
+    urlpatterns += static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)

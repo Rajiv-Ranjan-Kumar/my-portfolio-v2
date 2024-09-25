@@ -17,9 +17,7 @@ if not SECRET_KEY:
 DEBUG = True
 
 
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
-# ALLOWED_HOSTS = ['127.0.0.1']
-ALLOWED_HOSTS = ['my-portfolio-v2-pi.vercel.app']
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS'),'*']
 
 
 # For static files of admin panel
