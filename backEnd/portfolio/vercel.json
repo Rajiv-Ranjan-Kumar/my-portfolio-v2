@@ -20,11 +20,11 @@
     "routes": [
         {
             "src": "/static/(.*)",
-            "des": "/static/$1"
+            "dest": "/static/$1"
         },
         {
             "src": "/(.*)",
-            "des": "congig/wsgi.py"
+            "dest": "congig/wsgi.py"
         }
     ]
 }
