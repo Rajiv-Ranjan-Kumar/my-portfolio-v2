@@ -3,7 +3,7 @@ from .base import *
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY')
 
 
 # Ensure SECRET_KEY is always set
@@ -17,7 +17,7 @@ if not SECRET_KEY:
 DEBUG = True
 
 
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS'),'*']
+ALLOWED_HOSTS = [config('ALLOWED_HOSTS'),'*']
 
 
 # For static files of admin panel
@@ -38,11 +38,11 @@ MIDDLEWARE = MIDDLEWARE + [
 DATABASES = {
     "default": {
         "ENGINE" : 'django.db.backends.postgresql',
-        "NAME": os.getenv('DB_NAME'),
-        "USER": os.getenv('DB_USER'),
-        "PASSWORD": os.getenv('DB_PASSWORD'),
-        "HOST": os.getenv('DB_HOST'),
-        "PORT": os.getenv('DB_PORT'),
+        "NAME": config('DB_NAME'),
+        "USER": config('DB_USER'),
+        "PASSWORD": config('DB_PASSWORD'),
+        "HOST": config('DB_HOST'),
+        "PORT": config('DB_PORT'),
         'OPTIONS': {
             'sslmode': 'require',
         },
@@ -50,14 +50,10 @@ DATABASES = {
 }
 
 
-# Ensure static files are collected in production
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
 # Super User releted work
-SUPER_USER_NAME = os.getenv('SUPER_USER_NAME')
-SUPER_USER_EMAIL = os.getenv('SUPER_USER_EMAIL')
-SUPER_USER_PASSWORD = os.getenv('SUPER_USER_PASSWORD')
+SUPER_USER_NAME = config('SUPER_USER_NAME')
+SUPER_USER_EMAIL = config('SUPER_USER_EMAIL')
+SUPER_USER_PASSWORD = config('SUPER_USER_PASSWORD')
 
 
 CORS_ORIGIN_ALLOW_ALL = True

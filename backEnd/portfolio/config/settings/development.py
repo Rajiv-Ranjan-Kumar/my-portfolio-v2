@@ -21,4 +21,4 @@ DATABASES = {
 
 
 # Development-specific static file settings
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = BASE_DIR / 'static'
