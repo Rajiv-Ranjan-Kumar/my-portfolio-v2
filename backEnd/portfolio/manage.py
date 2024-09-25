@@ -2,10 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from dotenv import load_dotenv
-
-# Load the .env file
-load_dotenv()
+from decouple import config
 
 
 def main():
@@ -14,7 +11,7 @@ def main():
     environment = 'development'
 
     # Check if the 'IS_PRODUCTION' environment variable is set to 'True'
-    if os.getenv('IS_PRODUCTION', 'False') == 'True':
+    if config('IS_PRODUCTION', 'False') == 'True':
         environment = 'production'
 
     # Set the DJANGO_SETTINGS_MODULE based on the environment
