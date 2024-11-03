@@ -4,6 +4,7 @@ import { useState, useContext } from 'react';
 import SectionRefsContext from '@/app/SectionRefsContext';
 import Image from 'next/image';
 import img from '../../public/Screenshot (48).png';
+import apnaRestroImg from '../../public/apna_restro.png';
 import styles from '../assets/projects.module.scss';
 
 // Projects component displaying a list of projects
@@ -36,22 +37,13 @@ export default function Projects() {
             projectUrl: "http://#"
         },
         {
-            projetsName: 'My Portfolio',
-            description: 'A brief description of the first project. This is my portfolio website, showcasing my skills, expertise, and background. It provides an overview of my work and highlights my abilities in web development.',
-            frontEndTechnologies: ['HTML', 'SASS', 'TYPESCRIPT','NEXT JS'],
+            projetsName: 'Apna Restro',
+            description: 'Apna Restro Project is a food delivery system that connects customers with local restaurants, allowing them to browse menus, place orders, and track deliveries seamlessly. With a focus on user experience, it offers a quick and convenient way to enjoy delicious meals at home.',
+            frontEndTechnologies: ['HTML', 'SASS', 'TYPESCRIPT','REACT JS'],
             backEndTechnologies: ['PYTHON', 'DJANGO NINJA', 'POSTGRESQL'],
-            imageUrl: img.src,
-            gitHubeUrl: "http://#",
-            projectUrl: "http://#"
-        },
-        {
-            projetsName: 'My Portfolio',
-            description: 'A brief description of the first project. This is my portfolio website, showcasing my skills, expertise, and background. It provides an overview of my work and highlights my abilities in web development.',
-            frontEndTechnologies: ['HTML', 'SASS', 'TYPESCRIPT','NEXT JS'],
-            backEndTechnologies: ['PYTHON', 'DJANGO NINJA', 'POSTGRESQL'],
-            imageUrl: img.src,
-            gitHubeUrl: "http://#",
-            projectUrl: "http://#"
+            imageUrl: apnaRestroImg.src,
+            gitHubeUrl: "https://github.com/Rajiv-Ranjan-Kumar/apna-restro/tree/main/frontEnd",
+            projectUrl: "https://apna-restro-7l8nz6p1n-rajivranjankumars-projects.vercel.app/"
         },
     ];
 
