@@ -43,7 +43,7 @@ export default function Projects() {
             backEndTechnologies: ['PYTHON', 'DJANGO NINJA', 'POSTGRESQL'],
             imageUrl: apnaRestroImg.src,
             gitHubeUrl: "https://github.com/Rajiv-Ranjan-Kumar/apna-restro/tree/main/frontEnd",
-            projectUrl: "https://apna-restro-7l8nz6p1n-rajivranjankumars-projects.vercel.app/"
+            projectUrl: "https://apna-restro.vercel.app/"
         },
     ];
 
