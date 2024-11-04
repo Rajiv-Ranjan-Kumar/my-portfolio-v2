@@ -9,15 +9,20 @@ import htmxLogo from '../../public/htmx_logo.png';
 import cssLogo from '../../public/css_logo.png';
 import sassLogo from '../../public/sass_logo.png';
 import bootstrapLogo from '../../public/bootstrap_css_logo.png';
-import telwindLogo from '../../public/tailwind_css_logo.png';
+import tailwindLogo from '../../public/tailwind_css_logo.png';
 import jsLogo from '../../public/js_logo.png';
+import tsLogo from '../../public/type_script_logo.png'
 import reactLogo from '../../public/react_js_logo.png';
 import nextLogo from '../../public/next_js_logo.png';
+import reduxLogo from '../../public/redux_logo.png';
+import webSocketLogo from '../../public/web_socket_logo.png';
 import pythonLogo from '../../public/py_logo.png';
 import djangoLogo from '../../public/django_logo.png';
+import celeryLogo from '../../public/celery_logo.png';
+import djChannelLogo from '../../public/django_chanel_logo.png'
 import djangoNinjaLogo from '../../public/dj_ninja_logo.png';
 import fastApiLogo from '../../public/fast_api_logo.png';
-import pstgresqlLogo from '../../public/postgresql_logo.png';
+import postgresqlLogo from '../../public/postgresql_logo.png';
 import gitLogo from '../../public/git_logo.png';
 import jwtLogo from '../../public/jwt_logo.png';
 import c_logo from '../../public/c_logo.png';
@@ -37,19 +42,24 @@ export default function Skill() {
         { name: 'CSS', logo: cssLogo },
         { name: 'bootstrap', logo: bootstrapLogo },
         { name: 'SASS', logo: sassLogo },
-        { name: 'telwind css', logo: telwindLogo },
+        { name: 'Tailwind css', logo: tailwindLogo },
         { name: 'Java Script', logo: jsLogo },
         { name: 'React js', logo: reactLogo },
         { name: 'Next js', logo: nextLogo },
+        { name: 'Type Script', logo: tsLogo },
+        { name: 'Redux', logo: reduxLogo },
+        { name: 'Web Sockets', logo: webSocketLogo },
     ];
 
     // Backend skills with associated logos.
     const backendSkills = [
         { name: 'Python', logo: pythonLogo },
         { name: 'Django', logo: djangoLogo },
+        { name: 'Celery', logo: celeryLogo },
+        { name: 'Channels', logo: djChannelLogo },
         { name: 'Django ninja', logo: djangoNinjaLogo },
         { name: 'Fast Api', logo: fastApiLogo },
-        { name: 'PostgreSQL', logo: pstgresqlLogo },
+        { name: 'PostgreSQL', logo: postgresqlLogo },
     ];
 
     // Other skills with associated logos.
